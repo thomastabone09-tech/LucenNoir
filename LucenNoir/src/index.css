@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cinzel", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --color-obsidian-950: #050505;
+  --color-obsidian-900: #111113;
+  --color-obsidian-800: #1a1a1a;
+  
+  --color-graphite-700: #2d2d33;
+  --color-graphite-600: #46464f;
+  
+  --color-charcoal-500: #62626e;
+  
+  --color-silver-400: #9ca3af;
+  --color-silver-300: #d1d5db;
+  --color-silver-200: #e5e7eb;
+  --color-silver-100: #f3f4f6;
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian-950 text-silver-300 font-sans antialiased selection:bg-silver-300 selection:text-obsidian-950;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-black/20 backdrop-blur-md border border-white/5;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-2xl border border-white/10 hover:border-white/20 transition-colors duration-500;
+  }
+  
+  .text-metallic {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-[#f3f4f6] via-[#9ca3af] to-[#4b5563];
+  }
+  
+  .silver-glow {
+    box-shadow: 0 0 20px 0 rgba(214, 214, 219, 0.15);
+  }
+
+  .silver-glow-hover:hover {
+    box-shadow: 0 0 30px 0 rgba(214, 214, 219, 0.3);
+  }
+}
